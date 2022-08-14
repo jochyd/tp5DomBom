@@ -76,7 +76,7 @@
       </nav>
     </header>
     <main>
-      <section class="container">
+      <section class="container" id="padre">
         <form>
           <div class="mb-3">
             <label for="nombreApellido" class="form-label">Nombre</label>
@@ -103,7 +103,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="DNI" class="form-label">DNI</label>
+            <label for="dni" class="form-label">DNI</label>
             <input
               type="number"
               id="dni"
@@ -118,7 +118,7 @@
             <label for="sexo" class="form-label">Sexo</label>
             <input
               type="text"
-              id="nombreApellido"
+              id="sexo"
               class="form-control"
               placeholder=" M / F / Otro"
               maxlength="20"
@@ -150,12 +150,12 @@
             />
           </div>
           <div class="mb-3">
-            <label for="anoNacimiento" class="form-label"
+            <label for="anioDeNacimiento" class="form-label"
               >Año de Nacimiento</label
             >
             <input
               type="number"
-              id="anoNacimiento"
+              id="anioDeNacimiento"
               class="form-control"
               placeholder="Ej: 1956"
               minlength="4"
@@ -164,7 +164,9 @@
             />
           </div>
           <div>
-            <button type="submit" class="btn btn-success">Enviar</button>
+            <button type="submit" class="btn btn-success mb-3" id="enviar">
+              Enviar
+            </button>
           </div>
         </form>
       </section>
