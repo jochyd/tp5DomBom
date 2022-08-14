@@ -28,3 +28,5 @@ if (comenzarJuego === numeroIngresado) {
     console.log("no adivinaste");
   }
   
+
+  //tener el ccuenta el parseint
