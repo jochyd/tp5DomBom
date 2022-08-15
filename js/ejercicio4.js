@@ -108,19 +108,18 @@ setInterval(() => {
   }
   if (parseInt(minutos.innerHTML) === 60) {
     minutos.innerHTML = 0;
-  }
-  if (parseInt(minutos.innerHTML === 0)) {
-    hora.innerHTML++ ;
+    hora.innerHTML++;
   }
   if(parseInt(hora.innerHTML) === 24){
     hora.innerHTML = 0;
-    diaFunc;
+    diaFunc();
     numero.innerHTML = fechaActual.getDate();
-    mesFunc;
+    mesFunc();
     anio.innerHTML = 'de ' + fechaActual.getFullYear();
   }
+}, 0,1);
 
-}, 1000);
+
 
 
 // console.log(fechaActual)
