@@ -11,10 +11,10 @@ function agregar(e){
   itemLista.innerHTML = tareaNueva;
   itemLista.className = 'col-sm-10'
   let btnBorrar = document.createElement('button');
-  btnBorrar.innerHTML = 'Borrar'
-  btnBorrar.className = 'btn btn-danger col-sm-1 mb-2'
-
+  btnBorrar.innerHTML = 'X'
+  btnBorrar.className = 'btn btn-danger col-sm-1 mb-2 ms-3'
   
+
   console.log(itemLista)
   if (listaPadre.hasChildNodes){
     sinTareas.className = 'ocultar';
@@ -22,5 +22,12 @@ function agregar(e){
     listaPadre.appendChild(itemLista);
     document.getElementById("tareaAgregar").value = '';
     }
-    
+   btnBorrar.addEventListener('click', borrarChildren);
+   function borrarChildren(){
+        listaPadre.removeChild(listaPadre.children[1]);
+        listaPadre.removeChild(listaPadre.children[0]);
+   }
 }
+ 
+
+//se elimina de a una las tareas =)
