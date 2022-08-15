@@ -30,4 +30,3 @@ function agregar(e){
 }
  
 
-//se elimina de a una las tareas =)

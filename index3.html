@@ -29,31 +29,40 @@
     </header>
     <main>
       <section class="container my-3">
-          <form id="tareaNueva">
-              <div class="mb-3">
-                  <label for="tareaNueva" class="form-label">Nueva tarea:</label>
-                  <input type="text" id="tareaAgregar" class="form-control" placeholder="Escribe aquí tu tarea" minlength="5" maxlength="100" required>
-              </div>
-              <button type="submit" class="btn btn-success w-100">Agregar tarea</button>
-              <hr>
-          </form>
-          <article class="my-3" id="listaTareas">
-              <h5>Lista de tareas</h5>
-              <div id="sinTareas">
-                <p >No hay tareas Todavia</p>
-              </div>
-              <div>
-                <ul id="listaPadre" class="row list-unstyled">
-                </ul>
-              </div>
-          </article>
+        <form id="tareaNueva">
+          <div class="mb-3">
+            <label for="tareaNueva" class="form-label">Nueva tarea:</label>
+            <input
+              type="text"
+              id="tareaAgregar"
+              class="form-control"
+              placeholder="Escribe aquí tu tarea"
+              minlength="5"
+              maxlength="100"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-success w-100">
+            Agregar tarea
+          </button>
+          <hr />
+        </form>
+        <article class="my-3" id="listaTareas">
+          <h5>Lista de tareas</h5>
+          <div id="sinTareas">
+            <p>No hay tareas Todavia</p>
+          </div>
+          <div>
+            <ul id="listaPadre" class="row list-unstyled"></ul>
+          </div>
+        </article>
       </section>
-  </main>
+    </main>
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"
-  ></script>
-  <script src="/js/ejercicio3.js"></script>
-</body>
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/ejercicio3.js"></script>
+  </body>
 </html>
