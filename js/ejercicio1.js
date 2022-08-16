@@ -19,14 +19,15 @@ function adivinarNumero(e) {
   let numeroIngresado = document.querySelector("input").value;
   //completar las preguntas correspondientes
   //formulario.reset();
- 
+  if (numeroMagico === numeroIngresado) {
+     alert("adivinaste");
+     formulario.reset();
+  } else if (numeroMagico < numeroIngresado){
+    alert("El numero que ingresaste es Mayor");
+  }else{alert('El numero que ingresaste es menor')}
 }
 
-if (comenzarJuego === numeroIngresado) {
-    console.log("adivinaste");
-  } else {
-    console.log("no adivinaste");
-  }
+
   
 
   //tener el ccuenta el parseint

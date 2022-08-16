@@ -1,49 +1,61 @@
 let btnStart = document.getElementById("start");
+let btnStop = document.getElementById("stop")
 let segundos = document.getElementById("segundos");
 let minutos = document.getElementById("minutos");
-let hora = document.getElementById("hora");
+let horas = document.getElementById("hora");
+let btnRestart = document.getElementById('restart');
 
 btnStart.addEventListener("click", comenzar);
+btnStop.addEventListener("click", detener);
+btnRestart.addEventListener('click', reiniciar);
 
-function comenzar() {
-  if (btnStart.className === "btn btn-success ms-5") {
-    //aqui modificamos el boton start a stop
-    btnStart.removeChild(btnStart.children[0]);
-    btnStart.className = "btn btn-danger ms-5";
-    let stop = document.createElement("i");
-    stop.className = "bi bi-pause-circle-fill";
-    btnStart.appendChild(stop);
-   
+let ejecucion = true;
+
+btnStop.disabled = true;
+btnRestart.disabled = true;
+
+function comenzar(){
+    btnStop.disabled = false;
+    btnRestart.disabled = false;
+    btnStart.disabled = true;
+    ejecucion = true;
     function interval(){
-        setInterval(() => {
-            if (parseInt(segundos.innerHTML) < 59) {
-              segundos.innerHTML++;
-            } else {
-              segundos.innerHTML = 0;
-              minutos.innerHTML++;
-            }
-            if (parseInt(minutos.innerHTML) === 60) {
-              hora.innerHTML++;
-              minutos.innerHTML = 0;
-            }
-          }, 1000);
-          
+        if(parseInt(segundos.innerHTML) < 59){
+            segundos.innerHTML++;
+        } else {
+            segundos.innerHTML = 0;
+            minutos.innerHTML++;
+        } 
+        if(parseInt(minutos.innerHTML) === 60){
+            horas.innerHTML++;
+            minutos.innerHTML = 0;
+        }
+        if(ejecucion === false){
+            clearInterval(tiempo);
+        }
     }
-    // let parar = 0; 
+    let tiempo = setInterval(interval, 1000);
+}
 
-    // switch (parar){
-    //     case btnStart.className === "btn btn-danger ms-5":
-    //     interval();
-    //     break
-    // }
-    
-  } else {
-    //aqui modificamos el boton stop a start
-    btnStart.removeChild(btnStart.children[0]);
-    btnStart.className = "btn btn-success ms-5";
-    let start = document.createElement("i");
-    start.className = "bi bi-caret-right-fill";
-    btnStart.appendChild(start);
+function detener(){
+    btnStop.disabled = true;
+    btnRestart.disabled = false;
+    btnStart.disabled = false;
+    if (ejecucion === false){
+        ejecucion = true
+    }else{
+        ejecucion = false
+    }
+} 
 
-  }
+function reiniciar (){
+    btnStop.disabled = true;
+    btnRestart.disabled = true;
+    btnStart.disabled = true;
+    detener();
+    segundos.innerHTML = parseInt('0');
+    minutos.innerHTML = parseInt('0');
+    horas.innerHTML = parseInt('0');
+    ejecucion === true;
+
 }
