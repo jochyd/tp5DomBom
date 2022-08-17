@@ -12,6 +12,7 @@ formulario.addEventListener("submit", adivinarNumero);
 function comenzarJuego() {
   numeroMagico = Math.floor(Math.random() * (10 + 1 - 1) + 1);
   console.log(numeroMagico);
+  
 }
 
 function adivinarNumero(e) {
